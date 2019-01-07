@@ -1,6 +1,6 @@
 {
 	"name": "react-audio-graph",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "React component for visualizing audio buffers as waveform graph",
 	"main": "dist/index.js",
 	"scripts": {

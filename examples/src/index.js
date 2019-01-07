@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import MyComponent from '../../src';
-import test from "./test.mp3"
+import AudioGraph from '../../src';
+import testFile from "./test.mp3"
 
 const getAudioBuffer = (path, context) => {
 	return fetch(path)
@@ -15,9 +15,7 @@ const getAudioBuffer = (path, context) => {
 			});
 		})
 };
-/**
- * Get window audio context
- */
+
 const getContext = () => {
 
 	window.AudioContext =
@@ -40,22 +38,16 @@ class App extends React.Component {
 	componentDidMount() {
 		this.getFile();
 	}
-	getFile(path = test) {
+	getFile(path = testFile) {
 		const context = getContext();
 		getAudioBuffer(path, context).then((buffer) => this.setState({ buffer }))
 
 	};
-	onHandleButtonClick() {
-		this.setState({
-			startTime: this.state.startTime+1
-		})
-	}
 	render() {
 		return (
 			<div>
-				<button onClick={this.onHandleButtonClick.bind(this)}> Text </button>
-				{this.state.buffer ? <MyComponent buffer={this.state.buffer} startTime={this.state.startTime}/> : "Loading example audio..."}
-				{this.state.width}
+				<h1>react-audio-graph component demo</h1>
+				{this.state.buffer ? <AudioGraph buffer={this.state.buffer} /> : "Loading example audio..."}
 			</div>
 		)
 	}
