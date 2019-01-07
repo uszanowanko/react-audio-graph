@@ -1,8 +1,9 @@
 {
 	"name": "react-audio-graph",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "React component for visualizing audio buffers as waveform graph",
 	"main": "dist/index.js",
+	"repository": "https://github.com/uszanowanko/react-audio-graph/tree/gh-pages",
 	"scripts": {
 		"start": "webpack-dev-server --mode development",
 		"transpile": "babel src -d dist --copy-files",
